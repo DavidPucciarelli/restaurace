@@ -1,0 +1,11 @@
+body {
+    display: flex;
+}
+
+.wip {
+    border: 3px solid var(--darkgray);
+    margin-left: 30vw;
+    margin-top: 30vh;
+    width: 40vw;
+    text-align: center;
+}

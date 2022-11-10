@@ -1,0 +1,12 @@
+@import url("./fonts.css");
+
+.home-furnace {
+    position: relative;
+    padding: 0 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../src/photo-furnace.avif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-items: stretch;
+}

@@ -1,0 +1,25 @@
+@import url("./fonts.css");
+
+.footer {
+    width: 100vw;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--darkgray);
+    color: var(--lightgray);
+}
+
+/* bottom fixing footer based on screen height */
+@media only screen and (min-height: 699px) {
+    .footer {
+        position: fixed;
+        bottom: 0;
+    }
+}
+
+@media only screen and (max-height: 700px) {
+    .footer {
+        position: relative;
+        bottom: 0;    }
+}

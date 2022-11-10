@@ -1,0 +1,268 @@
+/* chybi nastaveni navbar: hoveru na full height navbaru a width li */
+@import url("./fonts.css");
+
+/* main */
+:root {
+    --darkgray: rgba(49,49,50,255);
+    --lightgray: #e9e9e9;
+    --green: rgba(0,146,70,255);
+    --white: rgba(255,255,255,255);
+    --red: rgba(206,43,55,255);
+}
+
+body {
+    margin: 0;
+    position: absolute;
+    font-family: "Montserrat", sans-serif;
+}
+
+/* navigation bar */
+.navbar {
+    background-color: var(--darkgray);
+    overflow: hidden;
+    position: fixed;
+    width: 100vw;
+    height: 50px;
+    opacity: 0.95;
+    z-index: 8;
+}
+
+.navbar ul {
+    position: relative;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    color: var(--lightgray);
+}
+
+.navbar a {
+    position: relative;
+    align-self: stretch;
+    text-decoration: none;
+    color: var(--lightgray);
+    margin-top: 0;
+}
+
+.navbar li {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 30px;
+    list-style-type: none;
+    text-align: center;
+    width: 5vw;
+    height: 50px;
+}
+
+.navbar a:hover {
+    background: var(--lightgray);
+    color: #000;
+    transform: scale(1.3);
+}
+
+/* burger menu and overlay (if screen < 500px) */
+
+/* Menu Bars */
+.menu-bars {
+    height: 45px;
+    width: 7vw;
+    display: flex;
+    position: fixed;
+    top: 5px;
+    right: 40px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 9;
+    background-color: var(--darkgray);
+    border-radius: 10%;
+}
+
+.menu-bars .bar1, .bar2, .bar3 {
+    background-color: #fff;
+    width: 80%;
+    height: 4px;
+    margin-top: 5px;
+}
+
+.menu-bars:hover {
+    transform: scale(1.2);
+    box-shadow: rgba(0, 0, 0, 0.7);
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    transform: translateX(-100vw);
+}
+
+.overlay-slide-right {
+    transition: all 0.5s ease-in-out;
+    transform: translateX(0);
+}
+
+.overlay-slide-left {
+    transition: all 0.5s ease-in-out;
+    transform: translateX(-100vw);
+}
+
+/* Overlay Menu Items */
+.overlay, .overlay-ul {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.overlay-ul li:nth-of-type(1) {
+    background-color: var(--green);
+}
+
+.overlay-ul li:nth-of-type(2) {
+    background-color: var(--green);
+}
+
+.overlay-ul li:nth-of-type(3) {
+    background-color: var(--white);
+}
+
+.overlay-ul li:nth-of-type(4) {
+    background-color: var(--white);
+}
+
+.overlay-ul li:nth-of-type(5) {
+    background-color: var(--red);
+}
+
+.overlay-ul li:nth-of-type(6) {
+    background-color: var(--red);
+}
+
+/* delayed slide in navigation */
+.slide-in-1 {
+    animation: slide-in 0.4s linear 0.2s both;
+}
+
+.slide-in-2 {
+    animation: slide-in 0.4s linear 0.4s both;
+}
+
+.slide-in-3 {
+    animation: slide-in 0.4s linear 0.6s both;
+}
+
+.slide-in-4 {
+    animation: slide-in 0.4s linear 0.8s both;
+}
+
+.slide-in-5 {
+    animation: slide-in 0.4s linear 1s both;
+}
+
+.slide-in-6 {
+    animation: slide-in 0.4s linear 1.2s both;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateX(-100%)
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* delayed slide out navigation */
+.slide-out-1 {
+    animation: slide-out 0.3s linear 0.6s both;
+}
+
+.slide-out-2 {
+    animation: slide-out 0.3s linear 0.5s both;
+}
+
+.slide-out-3 {
+    animation: slide-out 0.3s linear 0.4s both;
+}
+
+.slide-out-4 {
+    animation: slide-out 0.3s linear 0.3s both;
+}
+
+.slide-out-5 {
+    animation: slide-out 0.3s linear 0.2 both;
+}
+
+.slide-out-6 {
+    animation: slide-out 0.3s linear 0.1s both;
+}
+
+@keyframes slide-out {
+    from {
+        transform: translateX(0)
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.overlay-ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    list-style: none;
+}
+
+.overlay .overlay-ul .overlay-li {
+    height: 16.67%;
+    overflow: hidden;
+}
+
+.overlay .overlay-ul .overlay-li a {
+    position: relative;
+    top: 45%;
+    color: #000;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+.overlay li a:hover {
+    transform: scale(1.4);
+}
+
+.overlay li a::before {
+    content: "";
+    width: 25vw;
+    height: 3px;
+    background-color: #000;
+    position: absolute;
+    top: 47.5%;
+    left: 0;
+    opacity: 0;
+}
+
+.overlay li a:hover::before {
+    opacity: 1;
+}
+
+/* showing and hiding menu based on screen size */
+@media only screen and (min-width: 699px) {
+    .menu-bars {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .navbar {
+        display: none;
+    }
+}
